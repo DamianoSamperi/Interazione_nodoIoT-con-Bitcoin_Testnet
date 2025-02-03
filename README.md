@@ -1,0 +1,1 @@
+# Iterazione_nodoIoT-con-Bitcoin_Testnet
