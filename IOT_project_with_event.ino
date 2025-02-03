@@ -5,7 +5,7 @@
 #include "Conversion.h"
 
 #define ledPin 27
-#define TOKEN "52ce69b94e114b1aa2136666eac0dbe5"
+#define TOKEN "INSERIRE QUI IL TOKEN BLOCKCYPHER"
 //Use pin 25 to receive the signal from the module
 #define PIR_MOTION_SENSOR 25
 
@@ -34,12 +34,12 @@ void got_ip_from_ap(WiFiEvent_t wifi_event, WiFiEventInfo_t wifi_info) {
 void writeToBlockchain() {
   //  get private key from wif
   PrivateKey pk;
-  pk.fromWIF("cT1ffmnU45AHFJEpwHK8VBvFrhiKGjAEi74QxMguTvpbMAbw7Z4P");
+  pk.fromWIF("INSERIRE QUI CHIAVE PRIVATA IN FORMATO WIF");
   PublicKey pub = pk.publicKey();
   // Corpo della richiesta (data JSON)
-  String jsonData = "{\"inputs\":[{\"addresses\":[\"mztNoKYciZB6DdggMLtJzHVhhuDX8cUDjR\"]}],\"outputs\":[{\"addresses\":[\"n4BgWRTw7ndk2ZYThbGuD6xAY28Y3GGf1n\"],\"value\":1},{\"script_type\":\"null-data\",\"script\":\"6a0474727565\",\"value\":0}],\"fees\":241}";
-  // String jsonData = "{\"inputs\":[{\"addresses\":[\"mztNoKYciZB6DdggMLtJzHVhhuDX8cUDjR\"]}],\"outputs\":[{\"addresses\":[\"n4BgWRTw7ndk2ZYThbGuD6xAY28Y3GGf1n\"],\"value\":1}],\"fees\":541}";
-  // String jsonData = "{\"inputs\":[{\"addresses\":[\"mztNoKYciZB6DdggMLtJzHVhhuDX8cUDjR\"]}],\"outputs\":[{\"addresses\":[\"tb1qerzrlxcfu24davlur5sqmgzzgsal6wusda40er\"],\"value\":1},{\"script_type\":\"null-data\",\"script\":\"6a0474727565\",\"value\":0}],\"fees\":2452}";
+  String jsonData = "{\"inputs\":[{\"addresses\":[\"INSERIRE INDIRIZZO MITTENTE\"]}],\"outputs\":[{\"addresses\":[\"INSERIRE INDIRIZZO DESTINATARIO\"],\"value\":1},{\"script_type\":\"null-data\",\"script\":\"6a0474727565\",\"value\":0}],\"fees\":241}";
+  // La stringa di sotto presenta il destinatario come faucet
+  // String jsonData = "{\"inputs\":[{\"addresses\":[\"INSERIRE INDIRIZZO MITTENTE\"]}],\"outputs\":[{\"addresses\":[\"tb1qerzrlxcfu24davlur5sqmgzzgsal6wusda40er\"],\"value\":1},{\"script_type\":\"null-data\",\"script\":\"6a0474727565\",\"value\":0}],\"fees\":2452}";
   HTTPClient http;
   http.begin(url_create_tx);
   http.addHeader("Content-Type", "application/json");
