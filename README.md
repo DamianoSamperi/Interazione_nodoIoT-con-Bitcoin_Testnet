@@ -1,7 +1,7 @@
 # Iterazione_nodoIoT-con-Bitcoin_Testnet
 
-Questo è un progetto realizzato con Arduino IDE utilizzando la board Esp32 Wroom32.
-
+Questo è un progetto realizzato con Arduino IDE utilizzando la board Esp32 Wroom32 che monitora un movimento continuo tramite sensore PIR in caso il movimento duri per un tempo di 10 secondi viene creata,firmata e inviata una transazione .
+Nella transazione viene utilizzato uno script OP_RETURN che mi inserisce nella transazione una stringa "true" in formato esadecimale (è possibile inviare una qualunque stringa, invito a informarsi sul funzionamento dello scritp OP_RETURN)
 
 ## Come usare la libreria uBitcoin con la modifica al Network
 questo progetto utilizza una libreria modificata, per via di un oggetto omonimo Network nelle librerie Wifi.h e uBitcoin.h ; La libreria è inclusa nel repository nella cartella `libraries/ubitcoin`.
@@ -20,8 +20,10 @@ Sempre su Windows potrebbe essere necessario scaricare il driver per far rilevar
 
 ## Procedure per l'utilizzo del progetto
 Registrarsi su BlockCypher e copiare il proprio token nel progetto.
-Il Progetto richiede due wallet Bitcoin Testnet(non indirizzi Sigw32 poichè la procedura di signature non è compatibile)
-
+Il Progetto richiede due wallet Bitcoin Testnet(non indirizzi Sigw32 poichè la procedura di signature non lo gestisce),
+è possibile anche utilizzare un solo wallet mittente e creare una transazione verso una faucet.
+Ovviamente il wallet mittente deve avere assets all'interno, puoi ricaricare il tuo wallet bitcoin testnet tramite il faucet: https://coinfaucet.eu/en/btc-testnet/
+Il progetto utilizza un led e un sensore Groove PIR si possono modificare i PIN in base alle esigenze, il sensore PIR deve essere impostato in modalità N_retrig per monitorare un movimento continuo.
 ## Dipendenza
 Dal library manager di Arduino IDE
 - installare libreria ArduinoJson
