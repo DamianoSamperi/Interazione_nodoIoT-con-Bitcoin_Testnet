@@ -1,4 +1,4 @@
-# Iterazione_nodoIoT-con-Bitcoin_Testnet
+# Interazione_nodoIoT-con-Bitcoin_Testnet
 
 Questo è un progetto realizzato con Arduino IDE utilizzando la board Esp32 Wroom32 che monitora un movimento continuo tramite sensore PIR in caso il movimento duri per un tempo di 10 secondi viene creata,firmata e inviata una transazione .
 Nella transazione viene utilizzato uno script OP_RETURN che mi inserisce nella transazione una stringa "true" in formato esadecimale (è possibile inviare una qualunque stringa, invito a informarsi sul funzionamento dello scritp OP_RETURN)
