@@ -41,3 +41,8 @@ questo progetto utilizza una libreria modificata, per via di un oggetto omonimo 
 Dal library manager di **Arduino IDE**:
 - Installare la libreria **ArduinoJson**.
 
+## :warning: ATTENZIONE :warning:
+
+Per caricare il codice sull'ESP32, **è necessario tenere premuto il pulsante "BOOT"** per **tutta la durata del caricamento**.
+
+
