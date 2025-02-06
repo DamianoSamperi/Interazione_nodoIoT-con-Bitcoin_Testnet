@@ -1,14 +1,9 @@
 # Interazione_nodoIoT-con-Bitcoin_Testnet
 
-Questo è un progetto realizzato con Arduino IDE utilizzando la board Esp32 Wroom32 che monitora un movimento continuo tramite sensore PIR in caso il movimento duri per un tempo di 10 secondi viene creata,firmata e inviata una transazione .
-Nella transazione viene utilizzato uno script OP_RETURN che mi inserisce nella transazione una stringa "true" in formato esadecimale (è possibile inviare una qualunque stringa, invito a informarsi sul funzionamento dello scritp OP_RETURN)
+Questo progetto utilizza **Arduino IDE** e la board **ESP32 Wroom32** per monitorare il movimento continuo tramite un sensore **PIR**. Quando il movimento viene rilevato per un periodo di almeno 10 secondi, viene generata, firmata e inviata una transazione Bitcoin.
 
-## Come usare la libreria uBitcoin con la modifica al Network
-questo progetto utilizza una libreria modificata, per via di un oggetto omonimo Network nelle librerie Wifi.h e uBitcoin.h ; La libreria è inclusa nel repository nella cartella `libraries/ubitcoin`.
+La transazione sfrutta uno **script OP_RETURN**, che permette di inserire una stringa (ad esempio, "true") in formato esadecimale all'interno della transazione. È possibile personalizzare la stringa da inviare. Per ulteriori dettagli sul funzionamento dello script OP_RETURN, ti consiglio di approfondire il suo utilizzo nella documentazione di Bitcoin.
 
-1. Clona o scarica il repository.
-2. Apri il progetto con l'IDE di Arduino.
-3. Assicurati che la libreria sia correttamente inclusa nel progetto. Non è necessario installare la libreria separatamente.
    
 ## Visualizzare board Esp32 su Arduino IDE
 
@@ -38,9 +33,28 @@ questo progetto utilizza una libreria modificata, per via di un oggetto omonimo 
 
 ## Dipendenze
 
-Dal library manager di **Arduino IDE**:
-- Installare la libreria **ArduinoJson**.
+Per utilizzare questo progetto, è necessario installare la libreria **ArduinoJson** tramite il **Library Manager** dell'Arduino IDE:
 
+1. **Arduino IDE** > **Sketch** > **Include Library** > **Manage Libraries**
+2. Cerca e installa la libreria **ArduinoJson**.
+
+### Come Usare la Libreria uBitcoin con la Modifica al Network
+
+Questo progetto utilizza una versione modificata della libreria **uBitcoin** a causa di un conflitto con l'oggetto omonimo `Network`, presente sia nelle librerie **Wifi.h** che in **uBitcoin.h**. Pertanto, è necessario includere correttamente la libreria modificata nell'IDE di Arduino.
+
+1. **Clona o scarica il repository**:
+   - Puoi clonare il repository tramite Git o scaricare il file ZIP direttamente dalla pagina del progetto su GitHub.
+
+2. **Apri il progetto con l'IDE di Arduino**:
+   - Una volta scaricato o clonato il repository, apri il file `.ino` nel tuo Arduino IDE.
+
+3. **Aggiungi la libreria uBitcoin modificata**:
+   - Vai su **Sketch** > **Include Library** > **Add .ZIP Library**.
+   - Seleziona il file ZIP della libreria **uBitcoin** dalla cartella del progetto.
+
+### Note:
+- Assicurati di avere le librerie necessarie (come **ArduinoJson**) correttamente installate prima di iniziare.
+- In caso di problemi con la libreria **uBitcoin**, controlla che la versione corretta (modificata) sia stata inclusa.
 ## :warning: ATTENZIONE :warning:
 
 Per caricare il codice sull'ESP32, **è necessario tenere premuto il pulsante "BOOT"** per **tutta la durata del caricamento**.
