@@ -13,8 +13,10 @@
 unsigned long motionDetectedTime = 0;
 unsigned long motionThreshold = 10000;  // Soglia di tempo in millisecondi (10 secondi)
 
-const char* ssid = "iPhone";
-const char* password = "lasolita";
+// Inserisci qui il nome della tua rete Wi-Fi (SSID)
+const char* ssid = "NomeDellaTuaRete";
+// Inserisci qui la password della tua rete Wi-Fi
+const char* password = "PasswordDellaTuaRete";
 const char* url_create_tx = "https://api.blockcypher.com/v1/btc/test3/txs/new";
 char url_send_tx[256];
 
